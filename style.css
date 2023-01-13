@@ -1,7 +1,11 @@
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bahiana&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&display=swap');
 body{
     margin: 0;
     padding: 0;
     display: flex;
+    font-family: 'Karla', sans-serif;
 }
 .left{
     background-image: url(images/oxana-v-qoAIlAmLJBU-unsplash.jpg);
@@ -26,17 +30,21 @@ body{
 .logo img{
     height: 15vh;
     width: auto;
+    padding-left: 100px;
       
 }
  h1{
-   
+   font-family: 'Bahiana', cursive;
     color:black;
     justify-content: center;
-    font-size: 5vh
+    font-size: 5vh;
+    letter-spacing: 10px;
+    padding-right: 100px;
  }
 
  .left .credits {
     color: white;
+    font-weight: 700;
     position: absolute;
     bottom: 20px;
     margin: auto;
@@ -131,4 +139,12 @@ body{
     border: 1px solid rgb(105, 6, 6);
     box-shadow: rgba(150, 106, 10, 0.418) 1px 1px 5px;
     cursor: pointer;
+ }
+
+ input::placeholder{
+    font-family: 'IBM Plex Mono', monospace;
+ }
+
+ label{
+    font-weight: 600;
  }
