@@ -10,11 +10,9 @@
 <body>
     <div class="left">
         <div class="logo">
-            <img src="images/bf9cbf9e-35fa-4b41-8f49-ee8563613e9e.png" alt="plane logo">
+            <img src="images/paper-plane.png" alt="plane logo">
             <h1>TRAVELIA</h1>
-        </div>
-        
-        
+        </div>       
         <div>
             <p class="credits">photo by <a href="https://unsplash.com/@arttravelling">Oxana V.</a> on <a href="https://unsplash.com/photos/qoAIlAmLJBU">Unsplash</a></p>
         </div>
@@ -23,53 +21,54 @@
     <div class="right">
         <div class="upper_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo erat, rutrum at tellus et, tincidunt feugiat est. Phasellus eget eleifend ligula. Nulla facilisi. Aenean pharetra ultrices magna, nec mattis leo aliquam ac. Nullam molestie orci nunc, quis aliquet dui convallis quis. Aliquam erat volutpat. Duis quis ex justo. Nulla vitae ante quis est dapibus pulvinar porttitor euismod risus.</p></div>
         <div class="form">
-            <h2>Please, fill the form below:</h2>
+            
            <div class="fill_form"> 
             <form action="#" method="post">
-                
+                <h2>Please, fill the form below:</h2>    
                     <div class="row">
-                       
-                          <label for="first_name">FIRST NAME:</label>
-                          <input type="text" id="first_name" name="first_name" placeholder="John" required>
-                        
 
-                        
-                          <label for="last_name">LAST NAME:</label>
+                       <div class="field">
+                          <label for="first_name">FIRST NAME</label>
+                          <input type="text" id="first_name" name="first_name" placeholder="John" required>
+                        </div>
+
+                        <div class="field">
+                          <label for="last_name">LAST NAME</label>
                           <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
-                        
+                        </div>
                     </div>
 
                     <div class="row">
-                        
-                          <label for="user_email">EMAIL:</label>
+                        <div class="field">
+                          <label for="user_email">EMAIL</label>
                           <input type="email" name="user_email" id="user_email" placeholder="your_email@example.com" required>
-                        
+                        </div>
 
-                        
-                          <label for="tel">PHONE NUMBER</label>
+                        <div class="field">
+                          <label for="tel">PHONE NUMBER (optional)</label>
                           <input type="tel" id="tel" name="tel" placeholder="123-444-5555"
                           minlength="10"
                           maxlength="10"
                           pattern="[0-9]">
-                        
+                        </div>
                     </div>    
                     
                     <div class="row">
-                        
-                          <label for="user_password">PASSWORD:</label>
+                        <div class="field">
+                          <label for="user_password">PASSWORD (minimum 7 characters)</label>
                           <input type="password" id="user_password" name="user_password" placeholder="*******" required
-                          minlength="3"
-                          maxlength="15"
+                          minlength="7"
+                          maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
-                        
+                        </div>
 
-                        
+                        <div class="field">
                           <label for="confirm_password">CONFIRM PASSWORD</label>
-                          <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required
-                          minlength="3"
-                          maxlength="15"
+                          <input type="password" id="confirm_password" name="confirm_password" placeholder="*******" required
+                          minlength="7"
+                          maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
-                        
+                        </div>
                      </div>   
                     
                     <div class="btn">
@@ -79,7 +78,7 @@
             </form>
         </div>
             <div class="account">
-                <p id="account">Already have an account? <a href="http://google.com/">Log in</a></p>
+                <p id="account">Already have an account? <em><a href="http://google.com/">Log in</a></em></p>
             </div>
             </div>
         </div>
