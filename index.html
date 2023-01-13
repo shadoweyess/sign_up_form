@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up form</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
     
 </head>
 <body>
@@ -21,7 +22,7 @@
 
     <div class="right">
         <div class="upper_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo erat, rutrum at tellus et, tincidunt feugiat est. Phasellus eget eleifend ligula. Nulla facilisi. Aenean pharetra ultrices magna, nec mattis leo aliquam ac. Nullam molestie orci nunc, quis aliquet dui convallis quis. Aliquam erat volutpat. Duis quis ex justo. Nulla vitae ante quis est dapibus pulvinar porttitor euismod risus.</p></div>
-        <div class="form">
+        <div class="form_body">
             
            <div class="fill_form"> 
             <form action="#" method="post">
@@ -57,10 +58,11 @@
                     <div class="row">
                         <div class="field">
                           <label for="user_password">PASSWORD (minimum 7 characters)</label>
-                          <input type="password" id="user_password" name="user_password" placeholder="*******" title="Must contain at least one number and one uppercade and lowercase letter, and at least 7 to 25 characters." required
+                          <input type="password" id="user_password" name="user_password" placeholder="*******" title="Must contain at least: one number,one uppercase,one lowercase letter, and 7- 25 characters." required
                           minlength="7"
                           maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
+                          <span id="pwdMessage"></span> <br></br>
                         </div>
 
                         <div class="field">
@@ -69,12 +71,14 @@
                           minlength="7"
                           maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
+                          <span id="pwdMessage2"></span> <br></br>
                         </div>
                      </div>   
                     
                     <div class="btn">
                         <button type="submit">Create Account</button>
                     </div>
+                
                 
             </form>
         </div>
