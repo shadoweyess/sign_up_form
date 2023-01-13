@@ -150,7 +150,7 @@ body{
     font-weight: 600;
  }
 
- #pwdMessage, 
- #pwdMessage2{
+ #error{
     color: red;
+    
  }

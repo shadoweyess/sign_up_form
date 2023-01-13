@@ -62,7 +62,7 @@
                           minlength="7"
                           maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
-                          <span id="pwdMessage"></span> <br></br>
+                          
                         </div>
 
                         <div class="field">
@@ -71,12 +71,13 @@
                           minlength="7"
                           maxlength="25"
                           pattern="(?=.*\d)(?=.*[a-z]).{8,}">
-                          <span id="pwdMessage2"></span> <br></br>
+                          <span id="error" aria-live="polite"></span>
+                          
                         </div>
                      </div>   
                     
                     <div class="btn">
-                        <button type="submit">Create Account</button>
+                        <button type="submit" onclick="matchingPassword()">Create Account</button>
                     </div>
                 
                 
