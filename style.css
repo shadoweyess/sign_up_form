@@ -1,12 +1,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Bahiana&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&display=swap');
-body{
+
+  body{
     margin: 0;
     padding: 0;
     display: flex;
     font-family: 'Karla', sans-serif;
 }
+
 .left{
     background-image: url(images/oxana-v-qoAIlAmLJBU-unsplash.jpg);
     position: relative;
@@ -27,10 +29,11 @@ body{
     padding-left: 2vh;
     padding-right: 2vh;
 }
+
 .logo img{
     height: 15vh;
     width: auto;
-    padding-left: 100px;
+    padding-left: 100px; 
       
 }
  h1{
@@ -40,6 +43,8 @@ body{
     font-size: 5vh;
     letter-spacing: 10px;
     padding-right: 100px;
+    display: flex;
+    flex-shrink: 1;
  }
 
  .left .credits {
@@ -52,6 +57,7 @@ body{
     right: 0;
     text-align: center;
  }
+
  .left .credits a,
  .account a{
     color: rgb(19, 0, 104);
@@ -64,24 +70,22 @@ body{
  .account a:hover{
     border-bottom: 1px solid;
     color: rgb(19, 0, 104);
-   
-
  }
+
  .right {
     display: flex;
-    
     flex-direction: column;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    
  }
+
 .upper_text{
     font-size: 2.5vh;
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 10px;
-
 }
+
  .form_body {
     background-color: #b2ceb863;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
@@ -92,28 +96,28 @@ body{
     padding-right: 100px;
     gap: 30px;
  }
+
  input{
     width: 300px;
     padding: 10px 5px;
     flex-wrap: wrap;
-    
-    
  }
 
  input:focus{
     outline: none;
     border: 2px solid rgb(105, 6, 6);
     box-shadow: rgba(150, 106, 10, 0.418) 1px 1px 5px;
-   
  }
+
+ input::placeholder{
+   font-family: 'IBM Plex Mono', monospace;
+}
 
  .row {
     display: flex;
     gap: 100px;
-    
  }
 
- 
  .field {
     display: flex;
     flex-direction: column;
@@ -142,15 +146,65 @@ body{
     background-color: rgb(245, 245, 245);
  }
 
- input::placeholder{
-    font-family: 'IBM Plex Mono', monospace;
- }
-
+ 
  label{
     font-weight: 600;
  }
 
  #error{
     color: red;
-    
+    font-weight: 700;
+ }
+
+ .validation{
+
+ }
+ 
+ .row .field #toggleBtn{
+   position: absolute;
+   border-radius: 50%;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 0, 0.05);
+   width: 30px;
+   height: 30px;
+   margin-left: 275px;
+   margin-top: 28px;
+ }
+
+ .row .field #toggleBtn::before{
+   content: '\f06e';
+   font-family: fontAwesome;
+ }
+
+ .row .field #toggleBtn.hide::before{
+   content: '\f070';
+   font-family: fontAwesome;
+ }
+
+
+ .validation ul{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+
+   
+ }
+
+ .validation ul li{
+   position: relative;
+   list-style: none;
+   right: 35px;
+   padding-bottom: 5px;
+
+ }
+
+ .validation ul li::before{
+   content: '\f192';
+   font-family: fontAwesome;
+   padding-right: 20px;
+   
+
  }
