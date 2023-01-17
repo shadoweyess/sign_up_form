@@ -153,14 +153,12 @@
 
  #error{
     color: red;
-    font-weight: 700;
+    font-weight: 600;
  }
 
- .validation{
-
- }
  
- .row .field #toggleBtn{
+ .row .field #toggleBtn,
+ .row .field #toggleBtn2{
    position: absolute;
    border-radius: 50%;
    cursor: pointer;
@@ -174,15 +172,21 @@
    margin-top: 28px;
  }
 
- .row .field #toggleBtn::before{
+ .row .field #toggleBtn::before,
+ .row .field #toggleBtn2::before{
    content: '\f06e';
    font-family: fontAwesome;
  }
 
- .row .field #toggleBtn.hide::before{
+ .row .field #toggleBtn.hide::before,
+ .row .field #toggleBtn2.hide::before{
    content: '\f070';
    font-family: fontAwesome;
  }
+ .validation{
+
+}
+
 
 
  .validation ul{
@@ -198,7 +202,17 @@
    list-style: none;
    right: 35px;
    padding-bottom: 5px;
+   color: rgba(0, 0, 0, 0.555);
+   font-weight: 600;
 
+ }
+
+ .validation ul li.valid{
+   color: rgb(0, 0, 0);
+ }
+ .validation ul li.valid::before{
+   content: '\f00c';
+   color: green;
  }
 
  .validation ul li::before{

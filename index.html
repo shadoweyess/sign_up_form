@@ -59,8 +59,7 @@
                         <div class="field">
                           <label for="user_password">PASSWORD</label>
                           <input type="password" id="user_password" name="user_password" placeholder="*******" required 
-                          minlength="8"
-                          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!?@#$%^&*()_-=+])[a-zA-Z0-9!?@#$%^&*()_-=+]{8,}">
+                          minlength="8" onkeyup="checkPassword(this.value)">
                           <span id="toggleBtn" aria-live="polite"></span>                          
                           <div class="validation">
                             <ul>
@@ -77,9 +76,9 @@
                         <div class="field">
                           <label for="confirm_password">CONFIRM PASSWORD</label>
                           <input type="password" id="confirm_password" name="confirm_password" placeholder="*******" required
-                          minlength="7"
-                          maxlength="25"
-                          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!?@#$%^&*()_-=+])[a-zA-Z0-9!?@#$%^&*()_-=+]{7,25}">
+                          minlength="8">
+                          <span id="toggleBtn2" aria-live="polite"></span>
+                          
                           <span id="error" aria-live="polite"></span>
                           
                         </div>
@@ -102,19 +101,23 @@
 <script>
 
 let pswrd = document.getElementById("user_password");
+let pswrdConfirm = document.getElementById("confirm_password");
 let toggleBtn = document.getElementById("toggleBtn");
-let lowerCase =document.getElementById("lower");
-let upperCase =document.getElementById("upper");
+let toggleBtn2 = document.getElementById("toggleBtn2");
+
+let lowerCase = document.getElementById("lower");
+let upperCase = document.getElementById("upper");
 let digit = document.getElementById("number");
 let specialChar = document.getElementById("special");
 let minLength = document.getElementById("length");
+let message = document.getElementById("error");
 
 function checkPassword(data){
     const lower = new RegExp('(?=.*[a-z])');
     const upper = new RegExp('(?=.*[A-Z])');
     const number = new RegExp('(?=.*[0-9])');
-    const special = new RegExp('(?=.*[!?@#$%^&*()_-=+])');
-    const length = new RegExp('(?=.*{8,})');
+    const special = new RegExp('(?=.*[!@#\$%\^&\*])');
+    const length = new RegExp('(?=.{8,})');
 
 if(lower.test(data)){
     lowerCase.classList.add('valid');
@@ -138,8 +141,15 @@ if(special.test(data)){
 } else {
     specialChar.classList.remove('valid');
 }
+if(length.test(data)){
+    minLength.classList.add('valid');
+} else {
+    minLength.classList.remove('valid');
+}
 
 }
+
+
 
 //showing password
 toggleBtn.onclick = function(){
@@ -151,7 +161,15 @@ toggleBtn.onclick = function(){
         toggleBtn.classList.remove('hide');
     }
 }
-
+toggleBtn2.onclick = function(){
+    if (pswrdConfirm.type === 'password'){
+        pswrdConfirm.setAttribute('type', 'text');
+        toggleBtn2.classList.add('hide');
+    } else {
+        pswrdConfirm.setAttribute('type', 'password');
+        toggleBtn2.classList.remove('hide');
+    }
+}
 </script>
 </body>
 </html>
