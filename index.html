@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     
@@ -44,25 +45,33 @@
                         <div class="field">
                           <label for="user_email">EMAIL</label>
                           <input type="email" name="user_email" id="user_email" placeholder="your_email@example.com" required>
-                        </div>
+                    </div>
 
                         <div class="field">
                           <label for="tel">PHONE NUMBER (optional)</label>
-                          <input type="tel" id="tel" name="tel" placeholder="123-444-5555"
+                          <input type="tel" id="tel" name="tel" placeholder="123 444 5555"
                           minlength="10"
-                          maxlength="10"
-                          pattern="[0-9]">
+                          maxlength="10">
                         </div>
                     </div>    
                     
                     <div class="row">
                         <div class="field">
-                          <label for="user_password">PASSWORD (minimum 7 characters)</label>
-                          <input type="password" id="user_password" name="user_password" placeholder="*******" title="Must contain at least: one number,one uppercase,one lowercase letter, and 7- 25 characters." required
-                          minlength="7"
-                          maxlength="25"
-                          pattern="(?=.*\d)(?=.*[a-z]).{8,}">
-                          
+                          <label for="user_password">PASSWORD</label>
+                          <input type="password" id="user_password" name="user_password" placeholder="*******" required 
+                          minlength="8"
+                          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!?@#$%^&*()_-=+])[a-zA-Z0-9!?@#$%^&*()_-=+]{8,}">
+                          <span id="toggleBtn" aria-live="polite"></span>                          
+                          <div class="validation">
+                            <ul>
+                                <li id="lower">At least one lowercase character</li>
+                                <li id="upper">At least one uppercase character</li>
+                                <li id="number">At least one number</li>
+                                <li id="special">At least one special character</li>
+                                <li id="length">At least 8 characters</li>
+                            </ul>
+                          </div>
+                          <span id="error2" aria-live="polite"></span>                        
                         </div>
 
                         <div class="field">
@@ -70,26 +79,79 @@
                           <input type="password" id="confirm_password" name="confirm_password" placeholder="*******" required
                           minlength="7"
                           maxlength="25"
-                          pattern="(?=.*\d)(?=.*[a-z]).{8,}">
+                          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!?@#$%^&*()_-=+])[a-zA-Z0-9!?@#$%^&*()_-=+]{7,25}">
                           <span id="error" aria-live="polite"></span>
                           
                         </div>
                      </div>   
                     
                     <div class="btn">
-                        <button type="submit" onclick="matchingPassword()">Create Account</button>
+                        <button type="submit">Create Account</button>
                     </div>
                 
                 
             </form>
         </div>
             <div class="account">
-                <p id="account">Already have an account? <em><a href="http://google.com/">Log in</a></em></p>
+                <p>Already have an account? <em><a href="http://google.com/">Log in</a></em></p>
             </div>
             </div>
         </div>
     
     </div>
+<script>
 
+let pswrd = document.getElementById("user_password");
+let toggleBtn = document.getElementById("toggleBtn");
+let lowerCase =document.getElementById("lower");
+let upperCase =document.getElementById("upper");
+let digit = document.getElementById("number");
+let specialChar = document.getElementById("special");
+let minLength = document.getElementById("length");
+
+function checkPassword(data){
+    const lower = new RegExp('(?=.*[a-z])');
+    const upper = new RegExp('(?=.*[A-Z])');
+    const number = new RegExp('(?=.*[0-9])');
+    const special = new RegExp('(?=.*[!?@#$%^&*()_-=+])');
+    const length = new RegExp('(?=.*{8,})');
+
+if(lower.test(data)){
+    lowerCase.classList.add('valid');
+    } else {
+    lowerCase.classList.remove('valid');
+    }
+    
+if(upper.test(data)){
+    upperCase.classList.add('valid');
+} else {
+    upperCase.classList.remove('valid');
+}
+
+if(number.test(data)){
+    digit.classList.add('valid');
+} else {
+    digit.classList.remove('valid');
+}
+if(special.test(data)){
+    specialChar.classList.add('valid');
+} else {
+    specialChar.classList.remove('valid');
+}
+
+}
+
+//showing password
+toggleBtn.onclick = function(){
+    if (pswrd.type === 'password'){
+        pswrd.setAttribute('type', 'text');
+        toggleBtn.classList.add('hide');
+    } else {
+        pswrd.setAttribute('type', 'password');
+        toggleBtn.classList.remove('hide');
+    }
+}
+
+</script>
 </body>
 </html>
